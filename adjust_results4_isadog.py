@@ -49,18 +49,30 @@ def adjust_results4_isadog(results_dic, dogfile):
       else:
         dog_dict[dogname] += 1
       dogname = infile.readline()
-  for key in results_dic:
-    if results_dic[key][0] in dog_dict:
-      if results_dic[key][1] in dog_dict:
-
-        results_dic[key].extend([1, 1])
+  for value in results_dic.values():
+    if value[0] in dog_dict:
+      if value[1] in dog_dict:
+        value.extend([1, 1])
       else:
-        results_dic[key].extend([1, 0])
+        value.extend([1, 0])
     else:
-      if results_dic[key][1] in dog_dict:
-        results_dic[key].extend([0, 1])
+      if value[1] in dog_dict:
+        value.extend([0, 1])
       else:
-        results_dic[key].extend([0, 0])
+        value.extend([0, 0])
+
+  #for key in results_dic:
+    #if results_dic[key][0] in dog_dict:
+      #if results_dic[key][1] in dog_dict:
+
+        #results_dic[key].extend([1, 1])
+      #else:
+       # results_dic[key].extend([1, 0])
+    #else:
+     # if results_dic[key][1] in dog_dict:
+      #  results_dic[key].extend([0, 1])
+      #else:
+        #results_dic[key].extend([0, 0])
     """
     Adjusts the results dictionary to determine if classifier correctly 
     classified images 'as a dog' or 'not a dog' especially when not a match. 

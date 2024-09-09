@@ -72,12 +72,12 @@ def print_results(results_dic, results_stats_dic, model,
     for  x in results_stats_dic:
         if x[0] == 'p':
                 print(x, " :", results_stats_dic[x])
-    if print_incorrect_dogs and (results_stats_dic['n_dogs_img'] + results_stats_dic['n_notdogs_img'] != results_stats_dic['n_images']):
+    if (print_incorrect_dogs and ((results_stats_dic['n_correct_dogs'] + results_stats_dic['n_correct_notdogs']) != results_stats_dic['n_images'])):
         print("\nINCORRECT Dog/NOT Dog Assignments:")
         for keys in results_dic:
-                if sum(result_dic[keys][3:]) == 1 :
-                        print("Real: {:>26}   Classifier: {:>30}".format(results_dic[key][0],
-                                                          results_dic[key][1]))
+                if sum(results_dic[keys][3:]) == 1 :
+                        print("Real: {:>26}   Classifier: {:>30}".format(results_dic[keys][0],
+                                                          results_dic[keys][1]))
     if (print_incorrect_breed and 
         (results_stats_dic['n_correct_dogs'] != results_stats_dic['n_correct_breed']) 
        ):

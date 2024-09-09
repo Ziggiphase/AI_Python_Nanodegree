@@ -322,7 +322,7 @@ N Images            :  40
 N Dog Images        :  30
 N Not-Dog Images    :  10
 pct_correct_dogs  : 100.0
-pct_match  : 100.0
+pct_match  : 87.5
 pct_correct_breed  : 93.33333333333333
 pct_correct_notdogs  : 100.0
 
@@ -330,4 +330,4 @@ INCORRECT Dog Breed Assignment:
 Real:             great pyrenees   Classifier:                         kuvasz
 Real:                     beagle   Classifier:  walker hound, walker foxhound
 
-** Total Elapsed Runtime: 0:0:53
+** Total Elapsed Runtime: 0:0:51
